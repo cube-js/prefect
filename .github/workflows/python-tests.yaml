@@ -97,7 +97,7 @@ jobs:
 
       - name: Build test image
         if: ${{ matrix.build-docker-images }}
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5
         with:
           context: .
           # TODO: We do not need the UI in these tests and we may want to add a build-arg to disable building it
@@ -118,7 +118,7 @@ jobs:
 
       - name: Build Conda flavored test image
         if: ${{ matrix.build-docker-images }}
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5
         with:
           context: .
           build-args: |
